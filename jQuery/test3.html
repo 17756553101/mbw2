@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="JQuery.js"></script>
+    <script>
+        var arr = [1, 3, 5, 7, 9];
+        var obj = { 0: 1, 1: 3, 2: 5, length: 3 };
+        //1.利用原生js map方法遍历
+        // arr.map(function (value, index, array) {
+        //     console.log(index, value, array);
+
+        // });
+        var res = $.map(obj, function (value, index) {
+            console.log(index, value);
+            return value + index;
+        });
+        console.log(res);
+        //1.each静态方法默认返回值是遍历谁就返回谁
+        //2.map静态方法默认的返回值是一个空数组
+        //3.each静态方法不支持回调函数中对遍历的数组进行处理
+        //4.map静态方法可以在回调函数中通过return对遍历的数组进行处理然后生成一个新的数组返回
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

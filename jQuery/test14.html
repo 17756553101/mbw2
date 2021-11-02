@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            width: 200px;
+            height: 200px;
+            background: red;
+            border: 50px solid #000;
+            position: relative;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+
+        }
+    </style>
+    <script src="JQuery.js"></script>
+    <script>
+        $(function () {
+            var btns = document.getElementsByTagName("button");
+            //获取元素宽度
+            btns[0].onclick = function () {
+                console.log($(".father").width());
+            }
+            //设置元素宽度
+            btns[1].onclick = function () {
+                console.log($(".father").width(1100));
+                $(".son").offset({
+                    left: 10,
+                })
+                console.log($(".son").offset().left);
+
+                // $(".son").position({
+                //     left: 10,
+                // })
+                // console.log($(".son").position().left);
+            }
+            //offset([coordinates])
+            //作用：获取或者设置元素距离窗口的偏移位
+            console.log($(".son").offset().left);
+
+            //position()
+            //作用：获取元素距离定位元素的偏移位
+            //注意点：智能获取不能设置
+            console.log($(".son").position().left);
+        })
+    </script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">
+
+        </div>
+
+    </div>
+    <button>获取</button>
+    <button>设置</button>
+</body>
+
+</html>

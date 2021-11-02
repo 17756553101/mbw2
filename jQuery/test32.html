@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="JQuery.js"></script>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                //1.创建节点
+                var $li = $("<li>我是新增的li</li>");
+
+                //2.添加节点
+                // $("ul").append($li);
+                //将元素加到元素内部后面
+                //$("ul").prepend($li);
+                //将元素加到元素内部前面
+                //$($li).appendTo("ul");
+                //将元素加到元素内部后面
+                $($li).prependTo("ul");
+                //将元素加到元素内部前面
+
+            })
+        })
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <button>添加节点</button>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span name=it>123</span>
+</body>
+<script>
+    function Person() {
+
+    }
+    var p = new Person();
+    p.name = 'lnj';
+    console.log(p.name);
+    var sp = document.querySelector("span");
+    //操作属性节点的方法
+    //1.设置我们属性的值
+    sp.setAttribute("name", 'lnj');
+    //2.获取属性的值
+    //任何对象都有属性 但是只有dom对象才有属性节点
+    console.log(sp.getAttribute("name"));
+</script>
+
+</html>

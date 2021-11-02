@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="JQuery.js"></script>
+    <script>
+        $(function () {
+            function test1() {
+                alert("heelo");
+            }
+            function test2() {
+                alert("heelo 123");
+            }
+            $("button").click(test1);
+            $("button").click(test2);
+            $("button").mouseleave(function () {
+                alert("heelo mouseleave");
+            })
+            $("button").mouseenter(function () {
+                alert("heelo mouseenter");
+            })
+            //off不传参数移除所有事件
+            //off如果传递一个参数会移除所有指定类型的事件
+            //off如果传两个会移除指定类型指定函数事件
+            $("button").off("click", test1);
+            // $("button").click(function () {
+            //     alert("heelo");
+            // })
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+<button>按钮</button>
+
+</html>

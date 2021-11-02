@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="JQuery.js"></script>
+    <script>
+        $(function () {
+            //jquery有两种绑定事件方式
+            //1.eventName(fn);
+            //2.on(eventName.fn);
+            //推荐使用第一种 但有些事件只能使用第二种添加
+            //不会覆盖
+            $("button").click(function () {
+                alert("heelo");
+            })
+            $("button").mouseleave(function () {
+                alert("heelo mouseleave");
+            })
+            $("button").mouseenter(function () {
+                alert("heelo mouseenter");
+            })
+            $("button").click(function () {
+                alert("heelo");
+            })
+            $("button").on("click", function () {
+                alert("heelo");
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>我是一个按钮</button>
+</body>
+
+</html>

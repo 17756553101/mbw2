@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+            padding: 5px 10px;
+        }
+
+        .box {
+            width: 300px;
+            height: 450px;
+            margin: 50px auto;
+            border: 1px solid #000;
+        }
+
+        .box>h1 {
+            font-size: 20px;
+            line-height: 35px;
+            color: deeppink;
+            padding-left: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        ul>li {
+            border: 1px solid #ccc;
+        }
+
+        ul>li:nth-child(-n+3) span {
+            background: deeppink;
+        }
+
+        ul>li>span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: #ccc;
+            text-align: center;
+            line-height: 20px;
+            margin-left: 10px;
+        }
+
+        .content>img {
+            width: 80px;
+            height: 80px;
+            margin-left: 10px;
+            float: left;
+        }
+
+        .content {
+            overflow: hidden;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .content>p {
+            width: 180px;
+            height: 120px;
+            float: right;
+        }
+    </style>
+    <script src="JQuery.js"></script>
+    <script>
+        $(function () {
+            $("ul li:eq(0)").mouseenter(function () {
+                console.log(1234);
+                $("ul li div:eq(0)").css("display", "block");
+            })
+            $("ul li:first").mouseleave(function () {
+                console.log(1234);
+                $("ul li div:eq(0)").css("display", "none");
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <h1>电影排行榜</h1>
+        <ul>
+            <li><span>1</span>
+                <div class="content">
+                    <img src="sucai2.jpg" alt="">
+                    <p>123456</p>
+                </div>
+            </li>
+            <li><span>2</span>
+                <div class="content">
+                    <img src="sucai2.jpg" alt="">
+                    <p>123456</p>
+                </div>
+            </li>
+            <li><span>3</span></li>
+            <li><span>4</span></li>
+            <li><span>5</span></li>
+        </ul>
+    </div>
+</body>
+
+</html>

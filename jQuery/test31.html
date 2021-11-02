@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    div {
+        width: 700px;
+        height: 161px;
+        border: 1px solid #000;
+        margin: 100px auto;
+        overflow: hidden;
+    }
+
+    ul {
+        list-style: none;
+        width: 1200px;
+        height: 161px;
+        border: 1px solid #000;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    ul>li {
+        /*width: 20px;
+        height: 161px;
+        margin-top: 50px;
+        text-align: center; */
+        float: left;
+    }
+
+    ul>li>img {
+        width: 300px;
+        height: 161px;
+    }
+
+    /* 
+    ul>li>span {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-image:
+    } */
+</style>
+<script src="JQuery.js"></script>
+<script>
+    $(function () {
+        var offset = 0;
+        var timer;
+        function autoPlay() {
+            timer = setInterval(function () {
+                offset -= 10;
+                if (offset <= -600) {
+                    offset = 0;
+                }
+                $("ul").css("marginLeft", offset);
+            }, 50)
+        }
+        autoPlay();
+        $("li").hover(function () {
+
+            clearInterval(timer);
+
+            $(this).siblings().fadeTo(100, 0.2);
+        }, function () {
+
+            autoPlay();
+            this.stop();
+            $(this).siblings().fadeTo(100, 1);
+        })
+    })
+</script>
+
+<body>
+    <div>
+        <ul>
+            <li><img src="sucai2.jpg" alt=""></li>
+            <li><img src="sucai2.jpg" alt=""></li>
+            <li><img src="sucai2.jpg" alt=""></li>
+            <li><img src="sucai2.jpg" alt=""></li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

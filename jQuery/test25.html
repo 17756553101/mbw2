@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background: #000;
+            display: none;
+        }
+    </style>
+    <script src="JQuery.js"></script>
+    <script>
+        $(function () {
+            $("button").eq(0).click(function () {
+                //  $("div").css("display", "block");
+                $("div").show(1000, function () {
+                    //动画执行完毕后调用
+                    alert("显示完毕");
+                });
+            })
+            $("button").eq(1).click(function () {
+                $("div").hide(1000, function () {
+                    //动画执行完毕后调用
+                    alert("隐藏完毕");
+                });
+                // $("div").css("display", "none");
+            })
+            $("button").eq(2).click(function () {
+                $("div").toggle(1000);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <div>
+
+    </div>
+</body>
+
+</html>
