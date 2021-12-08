@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue (1).js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <span v-if="isEmail">
+      <label for="username"> 用户账号</label>
+      <input type="text" id="username" placeholder="邮箱" key="email"></span>
+    <span v-else="">
+      <label for="username">用户邮箱</label>
+      <input type="text" id="username" placeholder="账号" key="username">
+    </span>
+    <button @click="isEmail=!isEmail">切换类型</button>
+  </div>
+
+  <script>
+    //创建Vue实例,得到 ViewModel
+    var app = new Vue({
+      el: '#app',
+      data: {
+        isEmail: true
+      },
+      methods: {}
+    });
+  </script>
+</body>
+
+</html>

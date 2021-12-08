@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue (1).js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <!-- 循环对象时三个值：值 键 下标为属性名 -->
+      <li v-for="(value, key,index) in info">{{key}}:{{value}}:{{index}}</li>
+      <!-- 循环数组时两个值 内容 下标 -->
+      <li v-for="(item, index) in names">{{index+1}}.{{item}}</li>
+    </ul>
+  </div>
+
+  <script>
+    //创建Vue实例,得到 ViewModel
+    var app = new Vue({
+      el: '#app',
+      data: {
+        names: ['why', 'kobe', 'james', 'curry'],
+        info: {
+          name: 'why',
+          age: 18,
+          height: 1.88
+        }
+      },
+      methods: {}
+    });
+  </script>
+</body>
+
+</html>

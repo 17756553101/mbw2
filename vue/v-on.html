@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue (1).js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h2>点击次数:{{cs}}</h2>
+    <h2>点击次数:{{counter}}</h2>
+    <button v-on:click="increment">+</button>
+    <button @click="decrement">-</button>
+    <button @click="btnClick">按钮1</button>
+    <!-- //vue会默认将浏览器生成event事件作为参数传入到方法中去 -->
+    <button @click="btn2Click">按钮2</button>
+    <!-- //在调用方法时，如何手动的获取到浏览器参数的event对象：$event -->
+    <button @click="btn3Click(112,$event)">按钮3</button>
+    <button @click.once="btn3Click(112,$event)">按钮4</button>
+    <div @click='divclick'>
+      <!-- stop修饰符的使用 -->
+      <button @click.stop='btn4Click'>点击</button>
+      <!-- prevent修饰符的使用 -->
+      <form action="baidu">
+        <input @click.prevent.stop type="submit" value='提交'>
+      </form>
+      <!-- 监听键盘  回车修饰符-->
+      <input type="text" @keyup.enter='keyUp'>
+    </div>
+
+  </div>
+
+  <script>
+    //创建Vue实例,得到 ViewModel 
+    var app = new Vue({
+      el: '#app',
+      data: {
+        cs: 0,
+        counter: 0
+      },
+      methods: {
+        increment() {
+          this.cs += 1;
+          this.counter++;
+        },
+        decrement() {
+          this.cs += 1;
+          this.counter--;
+        },
+        btnClick() {
+          console.log("btnClick");
+        },
+        btn2Click(abc) {
+          console.log(abc, '---');
+        },
+        btn3Click(abc, event) {
+          console.log(abc, event, '+++');
+        },
+        btn4Click() {
+          console.log("btnClcik");
+        },
+        divclick() {
+          console.log('div');
+        },
+        keyUp() {
+          console.log('keyUp');
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

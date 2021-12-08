@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="../js/vue (1).js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <cpn1> </cpn1>
+    <cpn2> </cpn2>
+  </div>
+
+  <script>
+    //全局组件注册语法糖
+    //创建组件构造器
+    // const cpn1 = Vue.extend({
+    //   template: ` < div >
+    //   <h2>我是标题1</h2>
+    //   <p>我是内容1</p>
+    //   </div >`,
+    // })
+    //注册组件
+    // const Feature = Vue.component('cpn1', cpn1);
+    //语法糖形式
+    const Feature = Vue.component('cpn1', {
+      template: ` <div>
+      <h2>我是标题1</h2>
+      <p>我是内容1</p>
+      </div >`,
+    });
+
+
+    //创建Vue实例,得到 ViewModel
+    var app = new Vue({
+      el: '#app',
+      data: {},
+      methods: {},
+      components: {
+        //局部语法糖
+        'cpn2': {
+          template: `<div>
+      <h2>我是标题2</h2>
+      <p>我是内容2</p>
+      </div >`
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

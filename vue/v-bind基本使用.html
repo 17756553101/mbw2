@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue (1).js"></script>
+</head>
+<style>
+  .active {
+    color: red;
+  }
+
+  .line {
+    background-color: salmon;
+  }
+</style>
+
+<body>
+  <div id="app">
+    <div><img v-bind:src="imgUrl" alt=""></div>
+    <div> <img :src="imgUrl" alt=""></div>
+    <h2 :class="{active:isActive,line:false}">1234</h2>
+    <h2 :class="getClass()">1234</h2>
+    <h2 :class="['active','line']">1234</h2>
+    <h2 :class="getClass1()">1234</h2>
+  </div>
+
+  <script>
+    //创建Vue实例,得到 ViewModel
+    var app = new Vue({
+      el: '#app',
+      data: {
+        imgUrl: "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
+        isActive: true,
+        active: 'active',
+        line: 'line'
+      },
+      methods: {
+        getClass: function () {
+          return { active: this.isActive, line: false }
+        },
+        getClass1: function () {
+          return [this.active, this.line]
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

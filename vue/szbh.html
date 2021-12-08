@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/vue (1).js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <h2 v-for="item in a">{{item}}</h2>
+    <button @click="add()">添加</button>
+  </div>
+
+  <script>
+    //创建Vue实例,得到 ViewModel
+    var app = new Vue({
+      el: '#app',
+      data: {
+        a: ['d', 'b', 'c', 'a'],
+      },
+      methods: {
+        add() {
+          //注意 通过索引值改变数组界面不会发生改变
+          // this.a[0] = 'jjj'
+          //数组最后添加一个元素
+          // this.a.push("ff")
+          //删除数组中的最后一个元素
+          // this.a.pop("")
+          //删除数组中的第一个元素
+          // this.a.shift("")
+          //再数组前面加元素 
+          // this.a.unshift("ff", "ff")
+          //splice();第一个参数：开始位置  只传一个参数 会把参数后后续元素全部删除
+          //第二个参数：删除元素：传入你要删除几个元素
+          //  替换元素：从2开始三个全部替换
+          // this.a.splice(2, 3, 'm', 'n', 'l', 'x')
+          //插入元素 第二个参数是0
+          // this.a.splice(2, 0, 'm', 'n', 'l', 'x')
+          //排序
+          // this.a.sort();
+          //set(要修改的对象，索引值，修改后的值)
+          Vue.set(this.a, 0, 'bbbb');
+
+
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
